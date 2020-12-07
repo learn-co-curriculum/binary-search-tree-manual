@@ -91,13 +91,37 @@ Both of these trees are invalid BSTs.
 The left tree is invalid because:
 
 * The node with value 11 is greater than the root node with value 10. The node with value 11 is to the left of the root and needs to be less than 10 and greater than 5.
-* The node with value 1 is less than the root node. Since it's on the right side of the tree, it needs to be greater than 10 and less than 15. If we consider the node 12 and all of its child nodes as a subtree, then we also notice that the node with value of 1 needs to be greater than 12. In summary, this misplaced node needs to be greater than 12 and less than 16.
+* The node with value 1 is less than the root node. Since it's on the right side of the tree, it needs to be greater than 10 and less than 16. If we consider the node 12 and all of its child nodes as a subtree, then we also notice that the node with value of 1 needs to be greater than 12. In summary, this misplaced node needs to be greater than 12 and less than 16.
 
 The right tree is invalid because:
 
 * The node with value 25 is to the right of the node with value 30, meaning that its value must be greater than 30.
 
+## Implement a BST
+
+For this challenge, we'll be creating the `Node` class with the appropriate attributes and then we'll manually create valid BSTs to ensure that we understand the rules of BSTs. Our tests will check that your manually created BSTs are valid. We will not be creating a parent class to track the `root`. 
+
 Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.
+
+### Create the `Node` class
+
+A `Node` should have three attributes: `left`, `right`, `value`. When initializing a new Node, it should take three arguments: `value`, `left`, and `right`.
+
+When a new `Node` is initialized without a `left` node, `left` should be set to an appropriate falsy value by default. The same applies to the `right` node. Expect that every `Node` will be initialized with a `value`.
+
+```
+node = new Node(7)
+=> Node: value = 7, left = null / nil, right = null / nil
+
+left = new Node(4)
+right = new Node(10)
+root = new Node(7, left, right)
+=> Node: value = 7, left = Node with value 4, right = Node with value 10
+```
+
+### Manually Create Valid BSTs
+
+
 
 ## Before you start coding:
 
