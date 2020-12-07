@@ -41,6 +41,62 @@ binary_tree_in_order_traversal(bt_root)
 * leaf: A node that has no children.
 * subtree: Any time we see a parent node, other than the root node, we can refer to that node and all that branch off of it as a subtree. This is similar to how you think of a portion of an Array as a subset of that Array.
 
+## BST Rules
+
+For a BST to be valid, it must adhere to certain rules:
+
+1. Each node has a maximum of two children (`left` and/or `right` nodes).
+2. Every parent node contains a value that is greater than the value of its `left` node and less than the value of its `right` node.
+3. All nodes of a left subtree are less than the root node.
+4. All nodes of a right subtree are greater than the root node.
+5. All subtrees are also valid BSTs.
+
+It's important to note that a tree with only a root node is considered valid. An empty tree is also valid - weird, but true.
+
+```
+root = new Node(7)
+is_valid_bst(root)
+=> true
+
+is_valid_bst(null)
+=> true
+
+is_valid_bst("If this is true, then I've gone bananas!")
+=> false
+// guess we've not gone bananas!
+```
+
+### Examples of Valid BSTs
+
+![valid trees](./valid_trees.png)
+
+Both of these binary trees are valid BSTs. 
+
+The left tree is valid because:
+
+* Every node value to the left of the root is less than the value of the root. Every node value to the right of the root is greater than the root's value. 
+* The same is true for all subtrees. For example, if we start at the node with value 5, the node to its left is less than 5 and the node to its right is greater than 5. 
+
+The right tree is valid because:
+
+* All of the nodes to the right of the root (value 5) are greater than the root.
+* As we go down the right side, each right node is greater than its parent node.
+
+### Examples of Invalid BSTs
+
+![invalid trees](./invalid_trees.png)
+
+Both of these trees are invalid BSTs.
+
+The left tree is invalid because:
+
+* The node with value 11 is greater than the root node with value 10. The node with value 11 is to the left of the root and needs to be less than 10 and greater than 5.
+* The node with value 1 is less than the root node. Since it's on the right side of the tree, it needs to be greater than 10 and less than 15. If we consider the node 12 and all of its child nodes as a subtree, then we also notice that the node with value of 1 needs to be greater than 12. In summary, this misplaced node needs to be greater than 12 and less than 16.
+
+The right tree is invalid because:
+
+* The node with value 25 is to the right of the node with value 30, meaning that its value must be greater than 30.
+
 Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.
 
 ## Before you start coding:
