@@ -4,7 +4,7 @@
 
 ![Valid tree](./valid_tree.png)
 
-A binary search tree (BST) is a data structure consisting of nodes: it's called a Binary Search Tree because each node has at most two child Nodes and because its nodes are arranged in a specific order that makes it possible to search quickly. Each node has two attributes, often called `left` and `right`, and an additional attribute that stores the `value` of that node. The `left` Node contains a `value` less than the parent node, and the `right` node contains a value that is greater than the parent node. Any node that has at least one child node is called a parent node, and any node that doesn't have any children is called a leaf node. The node at the top of the tree is called the root node.
+A binary search tree (BST) is a data structure consisting of nodes: it's called a Binary Search Tree because each node has at most two child Nodes and because its nodes are arranged in a specific order that makes it possible to search quickly. Each node has two attributes, often called `left` and `right`, and an additional attribute that stores the `value` of that node. The `left` Node contains a `value` less than the parent node, and the `right` node contains a value that is greater than or equal to the parent node. Any node that has at least one child node is called a parent node, and any node that doesn't have any children is called a leaf node. The node at the top of the tree is called the root node.
 
 When a BST is traversed in order, it will output its values in sorted order.
 
@@ -37,7 +37,7 @@ binary_tree_in_order_traversal(bt_root)
 * root: The top node of the tree, the one where we begin traversing the tree (similar to the zeroth element in an Array). May or may not have children.
 * parent: Any node that has at least one child, i.e. its `left` or `right` attribute, or both, point to another node.
 * left: An attribute on every node in the tree. The node will have a value lesser than its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
-* right: An attribute on every node in the tree. The node will have a value greater than its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
+* right: An attribute on every node in the tree. The node will have a value greater than or eqaul to its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
 * leaf: A node that has no children.
 * subtree: Any time we see a parent node, other than the root node, we can refer to that node and all that branch off of it as a subtree. This is similar to how you think of a portion of an Array as a subset of that Array.
 
@@ -49,7 +49,7 @@ For a BST to be valid, it must adhere to certain rules:
 2. Every parent node contains a value that is greater than the value of its `left` node and less than the value of its `right` node.
 3. All nodes of a left subtree are less than the root node.
 4. All nodes of a right subtree are greater than the root node.
-5. All subtrees are also valid BSTs.
+5. All subtrees are also valid BSTs. This is just another way of rephrasing points 3 and 4 above.
 
 It's important to note that a tree with only a root node is considered valid. An empty tree is also valid - weird, but true.
 
@@ -101,7 +101,9 @@ The right tree is invalid because:
 
 For this challenge, we'll be creating the `Node` class with the appropriate attributes and then we'll manually create valid BSTs to ensure that we understand the rules of BSTs. Our tests will check that your manually created BSTs are valid. We will not be creating a parent class to track the `root`. 
 
-Use the language of your choosing. We've included starter files for some languages where you can pseudocode, explain your solution and code.
+Use the language of your choosing. We've included starter files for some languages where you can optionally pseudocode, explain your solution and code.
+
+***Feel free to run our tests whenever you like for this challenge! It can be hard to validate a BST on your own, especially if you're a newbie.***
 
 ### Create the `Node` class
 
@@ -121,7 +123,29 @@ root = new Node(7, left, right)
 
 ### Manually Create Valid BSTs
 
+Let's manually create some BSTs using the `Node` class we just declared. For this part, we'll have several methods with unique names, and it'll be your job to create the BST and return the `root` node. Our tests will then traverse the tree and determine if it's valid.
 
+You will be given an Array of values in sorted order, which you'll use to create your tree. Drawing the tree on paper can make it easier to understand how the nodes connect to one another. Be aware, that there is almost always more than one way to create a valid BST from a list of values. You get to decide how! In other words, you get to decide which node in the list to use as the root.
+
+Example:
+
+```
+list = [1, 2, 3]
+/* i want my tree to look like this:
+       2
+    1     3
+*/
+
+function one_to_three_bst() {
+  left = new Node(1)
+  right = new Node(3)
+  root = new Node(2, left, right)
+
+  return root
+}
+```
+
+You can find the methods and their accompanying lists in the starter files.
 
 ## Before you start coding:
 
