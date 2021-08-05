@@ -2,9 +2,9 @@
 
 **Fork and then clone me!**
 
-![Valid tree](./valid_tree.png)
+![Valid tree](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/binary-search-tree-manual/valid_tree.png)
 
-A binary search tree (BST) is a data structure consisting of nodes: it's called a Binary Search Tree because each node has at most two child Nodes and because its nodes are arranged in a specific order that makes it possible to search quickly. 
+A binary search tree (BST) is a data structure consisting of nodes: it's called a Binary Search Tree because each node has at most two child Nodes and because its nodes are arranged in a specific order that makes it possible to search quickly.
 
 Each node has two attributes, often called `left` and `right`, and an additional attribute that stores the `value` of that node. The `left` Node contains a `value` less than the parent node, and the `right` node contains a value that is greater than or equal to the parent node. Any node that has at least one child node is called a parent node, and any node that doesn't have any children is called a leaf node. The node at the top of the tree is called the root node.
 
@@ -34,12 +34,12 @@ binary_tree_in_order_traversal(bt_root)
 
 ## Important Terms
 
-* root: The top node of the tree, the one where we begin traversing the tree (similar to the zeroth element in an Array). May or may not have children.
-* parent: Any node that has at least one child, i.e. its `left` or `right` attribute, or both, point to another node.
-* left: An attribute on every node in the tree. The node will have a value lesser than its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
-* right: An attribute on every node in the tree. The node will have a value greater than or equal to its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
-* leaf: A node that has no children.
-* subtree: Any time we see a parent node, other than the root node, we can refer to that node and all that branch off of it as a subtree. This is similar to how you think of a portion of an Array as a subset of that Array.
+- root: The top node of the tree, the one where we begin traversing the tree (similar to the zeroth element in an Array). May or may not have children.
+- parent: Any node that has at least one child, i.e. its `left` or `right` attribute, or both, point to another node.
+- left: An attribute on every node in the tree. The node will have a value lesser than its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
+- right: An attribute on every node in the tree. The node will have a value greater than or equal to its parent. If it doesn't point to another node, it will be null or nil or some other falsy value.
+- leaf: A node that has no children.
+- subtree: Any time we see a parent node, other than the root node, we can refer to that node and all that branch off of it as a subtree. This is similar to how you think of a portion of an Array as a subset of that Array.
 
 ## BST Rules
 
@@ -68,42 +68,42 @@ is_valid_bst("If this is true, then I've gone bananas!")
 
 ### Examples of Valid BSTs
 
-![valid trees](./valid_trees.png)
+![valid trees](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/binary-search-tree-manual/valid_trees.png)
 
-Both of these binary trees are valid BSTs. 
+Both of these binary trees are valid BSTs.
 
 The left tree is valid because:
 
-* Every node value to the left of the root is less than the value of the root. Every node value to the right of the root is greater than the root's value. 
-* The same is true for all subtrees. For example, if we start at the node with value 5, the node to its left is less than 5 and the node to its right is greater than 5. 
+- Every node value to the left of the root is less than the value of the root. Every node value to the right of the root is greater than the root's value.
+- The same is true for all subtrees. For example, if we start at the node with value 5, the node to its left is less than 5 and the node to its right is greater than 5.
 
 The right tree is valid because:
 
-* All of the nodes to the right of the root (value 5) are greater than the root.
-* As we go down the right side, each right node is greater than its parent node.
+- All of the nodes to the right of the root (value 5) are greater than the root.
+- As we go down the right side, each right node is greater than its parent node.
 
 ### Examples of Invalid BSTs
 
-![invalid trees](./invalid_trees.png)
+![invalid trees](https://curriculum-content.s3.amazonaws.com/data-structures-and-algorithms/binary-search-tree-manual/invalid_trees.png)
 
 Both of these trees are invalid BSTs.
 
 The left tree is invalid because:
 
-* The node with value 11 is greater than the root node with value 10. The node with value 11 is to the left of the root and needs to be less than 10 and greater than 5.
-* The node with value 1 is less than the root node. Since it's on the right side of the tree, it needs to be greater than 10 and less than 16. If we consider the node 12 and all of its child nodes as a subtree, then we also notice that the node with value of 1 needs to be greater than 12. In summary, this misplaced node needs to be greater than 12 and less than 16.
+- The node with value 11 is greater than the root node with value 10. The node with value 11 is to the left of the root and needs to be less than 10 and greater than 5.
+- The node with value 1 is less than the root node. Since it's on the right side of the tree, it needs to be greater than 10 and less than 16. If we consider the node 12 and all of its child nodes as a subtree, then we also notice that the node with value of 1 needs to be greater than 12. In summary, this misplaced node needs to be greater than 12 and less than 16.
 
 The right tree is invalid because:
 
-* The node with value 25 is to the right of the node with value 30, meaning that its value must be greater than 30.
+- The node with value 25 is to the right of the node with value 30, meaning that its value must be greater than 30.
 
 ## Implement a BST
 
-For this challenge, we'll be creating the `Node` class with the appropriate attributes and then we'll manually create valid BSTs to ensure that we understand the rules of BSTs. Our tests will check that your manually created BSTs are valid. We will not be creating a parent class to track the `root`. 
+For this challenge, we'll be creating the `Node` class with the appropriate attributes and then we'll manually create valid BSTs to ensure that we understand the rules of BSTs. Our tests will check that your manually created BSTs are valid. We will not be creating a parent class to track the `root`.
 
 Use the language of your choosing. We've included starter files for some languages where you can optionally pseudocode, explain your solution and code.
 
-***Feel free to run our tests whenever you like for this challenge! It can be hard to validate a BST on your own, especially if you're a newbie.***
+**_Feel free to run our tests whenever you like for this challenge! It can be hard to validate a BST on your own, especially if you're a newbie._**
 
 ### Create the `Node` class
 
