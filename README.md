@@ -1,4 +1,4 @@
-# Day 4: What Is a b?
+# Day 4: What Is a Binary Search Tree?
 
 ## Learning Goals
 
